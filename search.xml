@@ -1,27 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>svFSI学习</title>
+    <url>/2022/11/12/svFSI%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p>svFSI是SimVascular项目中的开源数值计算库，主要针对心血管系统相关的模拟，包括传热传质（标量运输方程）、流体、固体、流固耦合、心脏等的模拟求解。</p>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+]]></content>
+      <tags>
+        <tag>svFSI</tag>
+        <tag>SimVascular</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>超算使用简介</title>
+    <url>/2022/11/12/%E8%B6%85%E7%AE%97%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p>集群，是通过一些计算机硬件技术将多台计算机进行连接的机器，主要用于大并行计算。我们简单连接两台电脑并通过一定配置使其实现能够同时计算同一个计算任务的功能就可以称他为集群。每一台电脑我们称它为一个节点。</p>
+<p>集群由于是使用多台电脑连接计算，因此这些电脑之间的通信，数据交换则是关键。一般在集群上的大规模计算是使用分布式内存技术（与之对应的是共享式内存），也就是每一台电脑计算整个计算任务的一部分，实现这个功能的就是采用mpi进行并行。当然分布式计算还派生出了另一个问题：网格的分区，metis和scotch是两个常用的开源网格分区软件。</p>
+]]></content>
+      <tags>
+        <tag>分布式计算</tag>
+        <tag>并行</tag>
+        <tag>mpi</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/11/12/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
+<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
+<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
+<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
+<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
     <title>共轭梯度法</title>
     <url>/2022/11/12/%E5%85%B1%E8%BD%AD%E6%A2%AF%E5%BA%A6%E6%B3%95/</url>
-    <content><![CDATA[<p>共轭梯度法常用在二次型的寻优问题中，或线性方程组求解中（$Ax&#x3D;b$, $A$为对称矩阵）</p>
+    <content><![CDATA[<p>共轭梯度法常用在二次型的寻优问题中，或线性方程组求解中（<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">A</mi><mi mathvariant="bold">x</mi><mo>=</mo><mi mathvariant="bold">b</mi></mrow><annotation encoding="application/x-tex">\mathbf{A}\mathbf{x}=\mathbf{b}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbf">A</span></span><span class="mord"><span class="mord mathbf">x</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbf">b</span></span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold">A</mi></mrow><annotation encoding="application/x-tex">\mathbf{A}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68611em;vertical-align:0em;"></span><span class="mord"><span class="mord mathbf">A</span></span></span></span></span>为对称矩阵）</p>
 ]]></content>
       <tags>
         <tag>数值算法</tag>

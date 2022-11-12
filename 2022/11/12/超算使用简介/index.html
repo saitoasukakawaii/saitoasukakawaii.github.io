@@ -19,23 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"saitoasukakawaii.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Saitoasuka&#39;s 数理学习">
-<meta property="og:url" content="https://saitoasukakawaii.github.io/archives/2022/index.html">
+    <meta name="description" content="简介 集群，是通过一些计算机硬件技术将多台计算机进行连接的机器，主要用于大并行计算。我们简单连接两台电脑并通过一定配置使其实现能够同时计算同一个计算任务的功能就可以称他为集群。每一台电脑我们称它为一个节点。 集群由于是使用多台电脑连接计算，因此这些电脑之间的通信，数据交换则是关键。一般在集群上的大规模计算是使用分布式内存技术（与之对应的是共享式内存），也就是每一台电脑计算整个计算任务的一部分，实">
+<meta property="og:type" content="article">
+<meta property="og:title" content="超算使用简介">
+<meta property="og:url" content="https://saitoasukakawaii.github.io/2022/11/12/%E8%B6%85%E7%AE%97%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/index.html">
 <meta property="og:site_name" content="Saitoasuka&#39;s 数理学习">
+<meta property="og:description" content="简介 集群，是通过一些计算机硬件技术将多台计算机进行连接的机器，主要用于大并行计算。我们简单连接两台电脑并通过一定配置使其实现能够同时计算同一个计算任务的功能就可以称他为集群。每一台电脑我们称它为一个节点。 集群由于是使用多台电脑连接计算，因此这些电脑之间的通信，数据交换则是关键。一般在集群上的大规模计算是使用分布式内存技术（与之对应的是共享式内存），也就是每一台电脑计算整个计算任务的一部分，实">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-12T14:29:31.000Z">
+<meta property="article:modified_time" content="2022-11-12T14:39:46.758Z">
 <meta property="article:author" content="Saitoasuka">
+<meta property="article:tag" content="分布式计算">
+<meta property="article:tag" content="并行">
+<meta property="article:tag" content="mpi">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://saitoasukakawaii.github.io/archives/2022/">
+<link rel="canonical" href="https://saitoasukakawaii.github.io/2022/11/12/%E8%B6%85%E7%AE%97%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"archives/2022/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://saitoasukakawaii.github.io/2022/11/12/%E8%B6%85%E7%AE%97%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/","path":"2022/11/12/超算使用简介/","title":"超算使用简介"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Archive | Saitoasuka's 数理学习</title>
+<title>超算使用简介 | Saitoasuka's 数理学习</title>
   
 
 
@@ -85,7 +92,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Saitoasuka's 数理学习</h1>
+      <p class="site-title">Saitoasuka's 数理学习</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -107,7 +114,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -120,6 +127,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text"> 简介</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -153,109 +161,102 @@
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 4 posts in total. Keep on posting.</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://saitoasukakawaii.github.io/2022/11/12/%E8%B6%85%E7%AE%97%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Saitoasuka">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Saitoasuka's 数理学习">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="超算使用简介 | Saitoasuka's 数理学习">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          超算使用简介
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="Created: 2022-11-12 22:29:31 / Modified: 22:39:46" itemprop="dateCreated datePublished" datetime="2022-11-12T22:29:31+08:00">2022-11-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p>集群，是通过一些计算机硬件技术将多台计算机进行连接的机器，主要用于大并行计算。我们简单连接两台电脑并通过一定配置使其实现能够同时计算同一个计算任务的功能就可以称他为集群。每一台电脑我们称它为一个节点。</p>
+<p>集群由于是使用多台电脑连接计算，因此这些电脑之间的通信，数据交换则是关键。一般在集群上的大规模计算是使用分布式内存技术（与之对应的是共享式内存），也就是每一台电脑计算整个计算任务的一部分，实现这个功能的就是采用mpi进行并行。当然分布式计算还派生出了另一个问题：网格的分区，metis和scotch是两个常用的开源网格分区软件。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-11-12T22:29:31+08:00"
-              content="2022-11-12">
-          11-12
-        </time>
+    
+    
+    
+
+    <footer class="post-footer"><div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
       </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/11/12/%E8%B6%85%E7%AE%97%E4%BD%BF%E7%94%A8%E7%AE%80%E4%BB%8B/" itemprop="url">
-            <span itemprop="name">超算使用简介</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-11-12T22:26:14+08:00"
-              content="2022-11-12">
-          11-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/11/12/svFSI%E5%AD%A6%E4%B9%A0/" itemprop="url">
-            <span itemprop="name">svFSI学习</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-11-12T21:24:46+08:00"
-              content="2022-11-12">
-          11-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/11/12/%E5%85%B1%E8%BD%AD%E6%A2%AF%E5%BA%A6%E6%B3%95/" itemprop="url">
-            <span itemprop="name">共轭梯度法</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-11-12T20:42:23+08:00"
-              content="2022-11-12">
-          11-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/11/12/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-
     </div>
-  </div>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97/" rel="tag"># 分布式计算</a>
+              <a href="/tags/%E5%B9%B6%E8%A1%8C/" rel="tag"># 并行</a>
+              <a href="/tags/mpi/" rel="tag"># mpi</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/11/12/svFSI%E5%AD%A6%E4%B9%A0/" rel="prev" title="svFSI学习">
+                  <i class="fa fa-chevron-left"></i> svFSI学习
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
 
 </div>
   </main>
